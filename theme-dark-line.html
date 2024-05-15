@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Theme Dark Line</title>
+<style>
+:root .dark-theme {
+    --darkGray: #9a9aa0;
+    --border: #212235;
+    --primary: #0060fe;
+    --darkBlue: #0b0c1b;
+    --darkGray: #363636;
+    --semi-dark: #1a1b2e;
+    --semi-dark-2: #212235;
+    --semi-dark-3: #141526;
+    --gold: #FFB830;
+    --red: #ec625f;
+    --border: #e2e9ee;
+    --light: #ecf4fa;
+    --gray: #9a9aa0;
+}
+body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    overflow-x: hidden;
+    cursor: default;
+    background-color: var(--darkBlue);
+}
+.theme-footer::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 50%;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #b102b7, #fd004c);
+    animation: rainbow-move 20s infinite linear alternate;
+}
+@keyframes rainbow-move {
+	100% {
+	    background-position-x: 4000px;
+	}
+}
+.theme-settings-btn {
+    position: fixed;
+    top: 180px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-color: transparent;
+    transition: all .15s ease;
+    z-index: 96;
+}
+.img-fluid {
+    max-width: 100%;
+}
+.theme-settings-btn img {
+    width: 22px;
+    z-index: 2;
+}
+.theme-settings-btn::before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--semi-dark);
+}
+.theme-settings-btn::after {
+    position: absolute;
+    content: '';
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: conic-gradient(#fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #b102b7, #fd004c);
+    animation: spin 1.5s infinite linear;
+    border-radius: 50%;
+    transition: all .15s ease;
+    z-index: -1;
+}
+.theme-settings-btn:hover {
+    transform: scale(1.05);
+}
+@keyframes spin {
+	100% {
+	    transform: rotate(360deg);
+	}
+}
+button {
+    cursor: pointer;
+}
+</style>
+</head>
+<body class="dark-theme">
+
+	<button type="button" class="theme-settings-btn" id="theme-settings-btn" data-tooltip="Theme Settings">
+    	<img src="https://machine.ar-coder.com/niftytheme/hostx/assets/images/icons/options/setting.png" class="img-fluid" alt="Icon">
+  	</button>
+
+	<footer class="theme-footer"></footer>
+
+</body>
+</html>
